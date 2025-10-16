@@ -1,0 +1,60 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+args_bin = []
+bin = "tmp\\main.exe"
+cmd = "go build -o tmp/main.exe ./"
+delay = 1000
+exclude_file = []
+exclude_regex = ["_test.go"]
+exclude_unchanged = false
+follow_symlink = false
+full_bin = ""
+include_dir = []
+include_ext = ["go", "tpl", "tmpl", "html"]
+include_file = []
+kill_delay = "0s"
+log = "build-errors.log"
+# 检测文件变更机制， false 是基于文件修改API 功耗低， true 是扫描全部， 功耗高
+poll = false
+poll_interval = 0
+# 运行后执行的命令，通常用于启动应用程序。
+post_cmd = []
+# 运行前执行的命令，通常用于初始化环境或设置变量。
+pre_cmd = []
+rerun = false
+rerun_delay = 500
+send_interrupt = false
+stop_on_error = false
+exclude_dir = [
+    ".git",
+    "test",
+    "api/docs"  # 新增排除 Swagger 文档目录
+]
+
+
+[color]
+app = ""
+build = "yellow"
+main = "magenta"
+runner = "green"
+watcher = "cyan"
+
+[watch]
+dirs = ["."]
+
+[log]
+# 是否只显示主进程的日志。
+main_only = false
+time = false
+
+[misc]
+# 当应用程序退出时是否删除临时文件。
+clean_on_exit = false
+
+[screen]
+# 新构建时是否清空屏幕
+clear_on_rebuild = true
+# 是否保留终端的滚动历史
+keep_scroll = false
